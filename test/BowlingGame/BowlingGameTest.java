@@ -1,5 +1,8 @@
-import User.User;
+package BowlingGame;
+
+import BowlingGame.User;
 import junit.framework.TestCase;
+import BowlingGame.BowlingGame;
 
 public class BowlingGameTest extends TestCase {
 
@@ -43,6 +46,8 @@ public class BowlingGameTest extends TestCase {
         game.joinUser(user);
         assertTrue(user.hasScoreCard());
     }
+
+
 
 
 

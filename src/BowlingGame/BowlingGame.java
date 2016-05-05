@@ -1,5 +1,6 @@
-import Scores.ScoreCard;
-import User.User;
+package BowlingGame;
+
+import BowlingGame.Scores.ScoreCard;
 
 import java.util.ArrayList;
 
@@ -8,7 +9,7 @@ public class BowlingGame {
     protected ArrayList<User> users = new ArrayList<User>();
 
     public static void main(String[] args) {
-        System.out.println("Hello BowlingGame");
+
     }
 
     protected boolean userIsInGame(User user) {
@@ -29,17 +30,21 @@ public class BowlingGame {
 
     public void playTurn(){
         for(User user:this.users){
+            Turn turn = new Turn();
             int firstThrow = user.throwBall(10);
-            int secondThrow = -1;
+            turn.addThrow(firstThrow);
             if( firstThrow < 10 ){
-                secondThrow = user.throwBall(firstThrow - 10);
+                int secondThrow = user.throwBall(10 - firstThrow);
+                turn.addThrow(secondThrow);
             }
-            writeScoreCard(user, firstThrow, secondThrow);
+            writeScoreCard(user, turn);
         }
     }
 
-    private void writeScoreCard(User user, int firstThrow, int secondThrow) {
+
+    private void writeScoreCard(User user, Turn turn) {
         ScoreCard scorecard = user.getScoreCard();
+        scorecard.submitTurn(turn);
 
     }
 

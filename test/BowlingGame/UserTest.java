@@ -1,6 +1,7 @@
-package User;
+package BowlingGame;
 
-import Scores.ScoreCard;
+import BowlingGame.Scores.ScoreCard;
+import BowlingGame.User;
 import junit.framework.TestCase;
 
 /**

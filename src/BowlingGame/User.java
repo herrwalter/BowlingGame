@@ -1,6 +1,6 @@
-package User;
+package BowlingGame;
 
-import Scores.ScoreCard;
+import BowlingGame.Scores.ScoreCard;
 
 import java.util.Random;
 
